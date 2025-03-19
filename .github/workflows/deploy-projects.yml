@@ -1,0 +1,41 @@
+name: Deploy Projects
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(steps.detect_changes.outputs.changed_projects) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Detect changed Projects
+        id: detect_changes
+        run: |
+          chmod +x scripts/detect-changes.sh
+          ./scripts/detect-changes.sh
+
+      - name: Build Projects
+        if: ${{ !steps.detect_changes.outputs.skip_steps }}
+        run: |
+          chmod +x scripts/build-projects.sh
+          ./scripts/build-projects.sh
+
+      - name: Deploy changed Projects
+        if: ${{ !steps.detect_changes.outputs.skip_steps }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: ${{ matrix.project }}
