@@ -12,7 +12,7 @@ done
 
 if [ -z "$changed_projects" ]; then
   echo "No projects change. Skipping."
-  echo "skip_test=true" >> $GITHUB_OUTPUT
+  echo "skip_deploy=true" >> $GITHUB_OUTPUT
   exit 0
 fi
 
