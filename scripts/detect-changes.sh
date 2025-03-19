@@ -18,5 +18,7 @@ if [ -z "$changed_projects" ]; then
 fi
 
 changed_projects="[${changed_projects:1}]"
+
+echo "skip_deploy=false" >> $GITHUB_OUTPUT
 echo "changed_projects=$changed_projects" >> $GITHUB_OUTPUT
 
