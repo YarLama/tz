@@ -24,7 +24,7 @@ jobs:
           ./scripts/detect-changes.sh
 
       - name: test1
-        run: echo ${cat $GITHUB_OUTPUT}
+        run: echo ${{ steps.detect_changes.outputs.skip_deploy }}
 
 
   deploy:
