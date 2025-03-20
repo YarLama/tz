@@ -48,7 +48,7 @@ jobs:
       - name: Build Projects
         run: |
           chmod +x scripts/build-projects.sh
-          ./scripts/build-projects.sh
+          ./scripts/build-projects.sh "${{ matrix.project }}"
 
       - name: Deploy changed Projects
         uses: peaceiris/actions-gh-pages@v3

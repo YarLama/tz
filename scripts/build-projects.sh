@@ -1,8 +1,10 @@
 # !/bin/bash
 
-echo "Building: ${{ matrix.project }}"
-cd ${{ matrix.project }}
+project=$1
+
+echo "Building: $project"
+cd $project
 npm install
 npm run build
 cd ..
-echo "${{ matrix.project }} build end."
+echo "$project build end."
