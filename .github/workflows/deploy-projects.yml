@@ -30,7 +30,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: detect-changes
-    if: ${{ !needs.detect-changes.outputs.skip_deploy }}
+    if: ${{ needs.detect-changes.outputs.skip_deploy != 'true' }}
     strategy:
       matrix:
         project: ${{ fromJson(needs.detect-changes.outputs.changed_projects) }}
