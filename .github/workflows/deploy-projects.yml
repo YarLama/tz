@@ -24,7 +24,9 @@ jobs:
           ./scripts/detect-changes.sh
 
       - name: test1
-        run: echo ${{ steps.detect_changes.outputs.skip_deploy }}
+        run: |
+          echo ${{ steps.detect_changes.outputs.skip_deploy }}
+          echo ${{ steps.detect_changes.outputs.changed_projects }}
 
 
   deploy:

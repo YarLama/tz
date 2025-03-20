@@ -6,7 +6,7 @@ changed_projects=""
 
 for project in $projects; do
   if echo "$changed_files" | grep -q "^$project/"; then
-    changed_projects="$changed_projects $project"
+    changed_projects="$changed_projects,\"$project\""
   fi
 done
 
