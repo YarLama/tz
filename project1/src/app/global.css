@@ -1,0 +1,25 @@
+:root {
+  --green-1: #73cf7a;
+  --yellow-1: #f7b731;
+  --red-1: #fc5c65;
+  --purple-1: #ac74fc;
+
+  --blue-1: #30c7dc;
+  --blue-2: #54d3c2;
+  --blue-3: #30898a;
+  --blue-4: #a9e9e0bf;
+
+  --font-color-primary: #323f47;
+  --font-color-secondary: #d2d1d1;
+  --font-color-tertiary: #6d7986;
+}
+
+body {
+  font-family: "Proxima Nova";
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(var(--blue-2), var(--blue-3));
+}

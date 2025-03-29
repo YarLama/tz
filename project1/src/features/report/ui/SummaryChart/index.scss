@@ -1,0 +1,63 @@
+.summary-chart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .summary-chart-items {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .summary-chart-line {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 32px;
+
+    .chart-sort {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 33px;
+
+      .time {
+        span {
+          font-weight: 600;
+          color: var(--font-color-secondary);
+          position: relative;
+          display: inline-block;
+          margin: 0 10px;
+
+          &.selected {
+            color: var(--font-color-primary);
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -12px;
+              height: 5px;
+              background: var(--blue-2);
+              border-radius: 5px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .chart {
+      canvas {
+        padding: 0px 20px;
+      } 
+    }
+
+    .chart-lines-label {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+}

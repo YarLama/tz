@@ -1,0 +1,21 @@
+.arrow-ui-icon {
+  --enable-color: #989fa3;
+  --disable-color: #d2d1d1;
+
+  &.enabled {
+    --fill-color: var(--enable-color);
+    cursor: pointer;
+  }
+
+  &.disabled {
+    --fill-color: var(--disable-color);
+  }
+
+  &.back {
+    transform: scaleX(-1);
+  }
+
+  path {
+    fill: var(--fill-color);
+  }
+}

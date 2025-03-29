@@ -1,0 +1,41 @@
+.circle-ui-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  text-align: center;
+
+  &.green {
+    --circle-color: var(--green-1);
+  }
+
+  &.yellow {
+    --circle-color: var(--yellow-1);
+  }
+
+  &.red {
+    --circle-color: var(--red-1);
+  }
+
+  &.purple {
+    --circle-color: var(--purple-1);
+  }
+
+  &.blue {
+    --circle-color: var(--blue-1);
+  }
+
+  &:not(.exclamation-mark) {
+    background-color: var(--circle-color);
+  }
+
+  &.exclamation-mark {
+    color: var(--circle-color);
+
+    &::after {
+      content: "";
+      font-family: $font-icons;
+      font-weight: $font-icons-weight;
+      font-size: 30px;
+    }
+  }
+}

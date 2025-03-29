@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout__nav {
+  width: 5%;
+  min-width: 174px;
+  align-self: stretch;
+  position: relative;
+}
+
+.layout__main {
+  flex: 1;
+  min-height: 100vh;
+  height: 100%;
+  border-top-left-radius: 56px;
+  background-color: white;
+}
